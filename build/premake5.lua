@@ -168,7 +168,7 @@ if (downloadRaylib) then
         links {"raylib"}
 
         cdialect "C17"
-        cppdialect "C++17"
+        cppdialect "C++20"
 
         includedirs {raylib_dir .. "/src" }
         includedirs {raylib_dir .."/src/external" }
@@ -189,7 +189,7 @@ if (downloadRaylib) then
             libdirs {"../bin/%{cfg.buildcfg}"}
 
         filter "system:linux"
-            links {"pthread", "m", "dl", "rt", "X11"}
+            links {"pthread", "m", "dl", "rt", "X11", "asound"}
 
         filter "system:macosx"
             links {"OpenGL.framework", "Cocoa.framework", "IOKit.framework", "CoreFoundation.framework", "CoreAudio.framework", "CoreVideo.framework", "AudioToolbox.framework"}
